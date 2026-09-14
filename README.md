@@ -1,1 +1,0 @@
-# alex-malinowski.github.io
