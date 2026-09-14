@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Sail &amp; Raid gameplay showcase pending</title>
+  <desc id="desc">Temporary image used until the selected gameplay capture is available.</desc>
+  <rect width="800" height="600" fill="#f3efe7"/>
+  <path d="M0 410h800v190H0z" fill="#174f84"/>
+  <path d="M0 430c90-45 165 45 250 0s170 45 260 0 180 45 290 0v170H0z" fill="#fffdf8" opacity=".22"/>
+  <path d="M365 155v250M365 170l155 115-155 5z" fill="none" stroke="#171717" stroke-width="10"/>
+  <path d="M270 405h300l-55 70H320z" fill="#171717"/>
+  <text x="400" y="90" text-anchor="middle" fill="#171717" font-family="Georgia,serif" font-size="42">Sail &amp; Raid</text>
+  <text x="400" y="535" text-anchor="middle" fill="#fffdf8" font-family="Courier New,monospace" font-size="20" letter-spacing="3">GAMEPLAY SHOWCASE</text>
+</svg>
