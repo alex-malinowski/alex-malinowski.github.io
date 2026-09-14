@@ -70,27 +70,15 @@ dl {
 }
 
 .page {
-  width: min(100%, 58rem);
+  width: min(100%, 60rem);
   margin: 0 auto;
   background: var(--page);
   border: 1px solid var(--ink);
 }
 
 .masthead {
-  padding: 2.8rem 3rem 2rem;
+  padding: 2.6rem 3rem 0;
   border-bottom: 3px double var(--ink);
-}
-
-.utility-line {
-  display: flex;
-  margin-bottom: 2.4rem;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
 }
 
 h1 {
@@ -101,8 +89,17 @@ h1 {
   letter-spacing: -0.045em;
 }
 
+.name-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.name-link:hover {
+  color: var(--link);
+}
+
 .title {
-  margin: 0.85rem 0 1.6rem;
+  margin: 0.85rem 0 1.45rem;
   color: var(--muted);
   font-size: clamp(1.05rem, 2.4vw, 1.35rem);
   font-style: italic;
@@ -110,7 +107,7 @@ h1 {
 
 .contact-line {
   display: flex;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   flex-wrap: wrap;
   gap: 0.25rem 0.65rem;
   font-family: var(--mono);
@@ -120,31 +117,45 @@ h1 {
 
 .site-nav {
   display: flex;
-  padding-top: 1rem;
-  flex-wrap: wrap;
-  gap: 0.45rem 1.1rem;
-  border-top: 1px dotted var(--rule);
+  align-items: flex-end;
+  gap: 0.35rem;
   font-family: var(--mono);
   font-size: 0.875rem;
 }
 
 .site-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  color: var(--ink);
+  background: var(--soft);
+  border: 1px solid var(--ink);
+  border-bottom-color: var(--ink);
+  margin-bottom: -1px;
   text-decoration: none;
 }
 
 .site-nav a:hover {
-  text-decoration: underline;
+  color: var(--link);
+  background: var(--page);
+}
+
+.site-nav a[aria-current="page"] {
+  padding-top: 0.65rem;
+  background: var(--page);
+  border-bottom-color: var(--page);
+  font-weight: 700;
 }
 
 .section {
   display: grid;
-  padding: 2.3rem 3rem;
+  padding: 2.4rem 3rem;
   border-bottom: 1px solid var(--rule);
-  grid-template-columns: 8.5rem minmax(0, 1fr);
+  grid-template-columns: 9rem minmax(0, 1fr);
   gap: 2rem;
 }
 
-.section h2 {
+.section > h2,
+.project-number {
   margin: 0;
   font-family: var(--mono);
   font-size: 0.875rem;
@@ -164,11 +175,80 @@ h1 {
   line-height: 1.5;
 }
 
+.about-copy {
+  max-width: 41rem;
+}
+
 .note {
-  padding: 0.7rem 0.9rem;
+  padding: 0.75rem 0.9rem;
   background: var(--soft);
   border-left: 3px solid var(--ink);
   font-size: 0.9375rem;
+}
+
+.next-links {
+  display: grid;
+  margin-top: 1.7rem;
+  border-top: 1px solid var(--ink);
+  grid-template-columns: 1fr 1fr;
+}
+
+.next-links a {
+  display: flex;
+  min-height: 3.3rem;
+  padding: 0.75rem;
+  align-items: center;
+  gap: 0.65rem;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.next-links a:first-child {
+  border-right: 1px solid var(--ink);
+}
+
+.next-links span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.next-links a:hover {
+  color: var(--page);
+  background: var(--ink);
+}
+
+.next-links a:hover span {
+  color: var(--page);
+}
+
+.resume-intro,
+.portfolio-intro {
+  background: var(--soft);
+}
+
+.file-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.file-links a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  color: var(--page);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+
+.file-links a:hover,
+.file-links a:focus-visible {
+  color: var(--ink);
+  background: var(--page);
 }
 
 .entry {
@@ -226,9 +306,8 @@ h1 {
 .skills-list {
   display: grid;
   margin-bottom: 0;
-  grid-template-columns: 9.5rem minmax(0, 1fr);
-  gap: 0;
   border-top: 1px dotted var(--rule);
+  grid-template-columns: 9.5rem minmax(0, 1fr);
 }
 
 .skills-list dt,
@@ -280,31 +359,67 @@ h1 {
   margin-top: 1.2rem;
 }
 
-.resume-section {
-  background: var(--soft);
+.project-section {
+  align-items: start;
 }
 
-.file-links {
+.project-number {
+  color: var(--muted);
+}
+
+.project-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
+  margin-bottom: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.file-links a {
-  display: inline-block;
-  padding: 0.48rem 0.72rem;
-  color: var(--page);
-  background: var(--ink);
-  border: 1px solid var(--ink);
+.project-header h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.project-subtitle {
+  margin: 0.18rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.project-meta {
+  margin: 0;
+  flex: 0 0 auto;
+  color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.8125rem;
-  text-decoration: none;
+  font-size: 0.75rem;
+  white-space: nowrap;
 }
 
-.file-links a:hover,
-.file-links a:focus-visible {
-  color: var(--ink);
-  background: var(--page);
+.project-details {
+  display: grid;
+  margin: 1.2rem 0 0;
+  border-top: 1px dotted var(--rule);
+  grid-template-columns: 8rem minmax(0, 1fr);
+}
+
+.project-details dt,
+.project-details dd {
+  padding: 0.6rem 0;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.project-details dt {
+  padding-right: 1rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.project-details dd {
+  margin: 0;
 }
 
 .site-footer {
@@ -344,11 +459,19 @@ h1 {
     padding-top: 1.5rem;
   }
 
-  .utility-line {
-    margin-bottom: 1.8rem;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.2rem;
+  .contact-line {
+    margin-bottom: 1.4rem;
+  }
+
+  .site-nav {
+    gap: 0.25rem;
+  }
+
+  .site-nav a {
+    flex: 1 1 0;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+    text-align: center;
   }
 
   .section {
@@ -356,27 +479,40 @@ h1 {
     gap: 1rem;
   }
 
-  .section h2 {
+  .section > h2,
+  .project-number {
     padding-bottom: 0.55rem;
     border-bottom: 1px solid var(--ink);
   }
 
-  .entry-header {
+  .next-links {
+    grid-template-columns: 1fr;
+  }
+
+  .next-links a:first-child {
+    border-right: 0;
+  }
+
+  .entry-header,
+  .project-header {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.35rem;
   }
 
-  .skills-list {
+  .skills-list,
+  .project-details {
     grid-template-columns: 1fr;
   }
 
-  .skills-list dt {
+  .skills-list dt,
+  .project-details dt {
     padding-bottom: 0;
     border-bottom: 0;
   }
 
-  .skills-list dd {
+  .skills-list dd,
+  .project-details dd {
     padding-top: 0.15rem;
   }
 
@@ -405,8 +541,9 @@ h1 {
   }
 
   .site-nav,
-  .resume-section,
-  .site-footer {
+  .file-links,
+  .site-footer,
+  .next-links {
     display: none;
   }
 
